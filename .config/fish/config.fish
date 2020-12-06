@@ -1,21 +1,14 @@
-function sudo
-	if test "$argv" = !!
-		eval command sudo $history[1]
-	else
-		command sudo $argv
-	end
-end
-
-function ..
-	cd ..
-end
-
-function cd..
-	cd ..
-end
+set fish_greeting
 
 source ~/.iterm2_shell_integration.(basename $SHELL)
 
+starship init fish | source
+
+# aliases
+thefuck --alias | source
+
+
+# envvars
 set -x CHOKIDAR_INTERVAL 5000
 
 set -x News__UserNavigationServiceUsername SA-BL-BUSINESS-CENTER
